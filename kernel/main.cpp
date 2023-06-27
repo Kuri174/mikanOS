@@ -205,6 +205,7 @@ extern "C" void KernelMainNewStack(
     Log(kInfo, "xHC has been found: %d.%d.%d\n",
         xhc_dev->bus, xhc_dev->device, xhc_dev->function);
   }
+  printk("2023/6/28 dev:2\n");
 
   SetIDTEntry(idt[InterruptVector::kXHCI], MakeIDTAttr(DescriptorType::kInterruptGate, 0),
               reinterpret_cast<uint64_t>(IntHandlerXHCI), kernel_cs);
